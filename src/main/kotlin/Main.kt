@@ -5,7 +5,25 @@ fun main(args: Array<String>) {
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
     println("Program arguments: ${args.joinToString()}")
 
-    print(sumExists(listOf(1, 3, 5, 6, 8, 9), 9))
+    val a = "5ygh45hyg456rtju645uyh65yu"
+    println(a.reversed())
+    println(reverse(a))
+    println(a.reversed() == reverse(a))
+}
+
+fun reverse(input: String): String {
+    var input_ca = input.toCharArray()
+    var a = 0
+    var b = input_ca.size - 1
+    var t: Char
+    while (a < b) {
+        t = input_ca[a]
+        input_ca[a] = input_ca[b]
+        input_ca[b] = t
+        a++
+        b--
+    }
+    return String(input_ca)
 }
 
 fun sumExists(list: List<Int>, sum: Int): List<Int> {
